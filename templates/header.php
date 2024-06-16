@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/fontawesome-free-6.4.0-web/css/brands.css">
     <link rel="stylesheet" href="css/fontawesome-free-6.4.0-web/css/solid.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>VTwine | Home</title>
+    <title>Chardie</title>
 </head>
 <body class="">
 

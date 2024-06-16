@@ -1,11 +1,24 @@
-<?php session_start(); ?>
 <?php
+// Start the session
+session_start();
 
-$_SESSION['firstname'] = null;
-$_SESSION['lastname'] = null;
-$_SESSION['email'] = null;
-$_SESSION['password'] = null;
+// Unset all of the session variables
+$_SESSION = array();
 
-header("location: ../index.php");
+// If it's desired to kill the session, also delete the session cookie.
+// Note: This will destroy the session, and not just the session data.
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+}
 
+// Destroy the session
+session_destroy();
+
+// Redirect to the login page or homepage
+header("Location: ../index.php");
+exit;
 ?>

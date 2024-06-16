@@ -1,21 +1,23 @@
 <a href='posts.php?source=add_product'>Add Product</a>
-
-<table class="table table-bordered table-hover">
+<section class="container mx-auto p-6 font-mono">
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+<div class="w-full overflow-x-auto">
+            <table class="w-full">
 
     <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Link</th>
-            <th>Image</th>
-            <th>Description</th>
-            <th>Create at</th>
+        <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+            <th class="px-4 py-3">Id</th>
+            <th class="px-4 py-3">Name</th>
+            <th class="px-4 py-3">Link</th>
+            <th class="px-4 py-3">Image</th>
+            <th class="px-4 py-3">Description</th>
+            <th class="px-4 py-3">Create at</th>
             
             
         </tr>
         
     </thead>
-    <tbody>
+    <tbody class="bg-white">
         <?php
         $query = "SELECT * FROM projects ";
         $select_query = mysqli_query($connection, $query);
@@ -33,15 +35,21 @@
 
             
 
-            echo "<tr>";
-            echo "<th> $project_id </th>";
-            echo "<th> $project_name </th>";
-            echo "<th> $project_link </th>";
-            echo "<th><img height='100px'  src='../images/projects/$project_image' alt=''></th>";
-            echo "<th> $description </th>";
-            echo "<th> $created_at </th>";
-            echo "<th><a href='posts.php?source=edit_product&p_id={$project_id}'>Edit</a></th>";
-            echo "<th><a href='posts.php?delete={$project_id}'>Delete</a></th>";
+            echo "<tr class='text-gray-700'>";
+            echo "<td class='px-4 py-3 border'>
+                <div class='flex items-center text-sm'>
+                  <div>
+                    <p class='font-semibold text-black'>$project_id</p>
+                  </div>
+                </div>
+              </td>";
+            echo "<td class='px-4 py-3 text-ms font-semibold border'>$project_name</td>";
+            echo "<td class='px-4 py-3 text-sm border'>$project_link</td>";
+            echo "<th><img class='object-cover object-center w-28 h-28 rounded dark:bg-gray-500'height='10px'  src='../images/projects/$project_image' alt=''></th>";
+            echo "<td class='px-4 py-3 text-ms font-semibold border'>$description</td>";
+            echo "<td class='px-4 py-3 text-ms font-semibold border'>$created_at</td>";
+            echo "<th class='px-4 py-3 text-ms font-semibold border' ><a class='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' href='posts.php?source=edit_product&p_id={$project_id}'>Edit</a></th>";
+            echo "<th class='px-4 py-3 text-ms font-semibold border'><a class='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' href='posts.php?delete={$project_id}'>Delete</a></th>";
             echo "</tr>";
 
 
@@ -86,3 +94,6 @@
                                   
                                 </tbody>
                             </table>
+                            </div>
+                            </div>
+                            </section>

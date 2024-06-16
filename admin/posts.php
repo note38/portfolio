@@ -22,7 +22,7 @@
                             <small>Author</small>
                         </h1>
                         
-                        <div class="col-xs-6">
+                        <div class="col-xs-12>
                         
                            <?php
                            if (isset($_GET['source'])) {

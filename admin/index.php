@@ -38,11 +38,30 @@
                 <div class="row">
                     <div class="col-lg-12">
 
-                        <h1 class="page-header">
+                        <h1 class="page-header w-full h-[4rem] flex items-center justify-center text-[2.5rem] font-medium py-1">
                             Welcome to Admin!
                             <small>Author</small>
                         </h1>
-                        
+
+                
+                        <div class="max-w-md p-8 sm:flex sm:space-x-6 mx-auto drop-shadow-2xl border-solid border-2">
+                        <div class="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
+                            <img src="../images/<?php echo $image; ?>" alt="" class="object-cover object-center w-full h-full rounded dark:bg-gray-500">
+                        </div>
+                        <div class="flex flex-col space-y-4">
+                            <div>
+                                <h2 class="text-2xl font-semibold"><?php echo $firstname; ?></h2>
+                                <span class="text-xl dark:text-gray-400"><?php echo $lastname; ?></span>
+                            </div>
+                            <div class="space-y-1">
+                                
+                                <span class="flex items-center space-x-2">
+                                    <span class="dark:text-gray-400"><?php echo $email; ?></span>
+                                </span>
+                                
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <!-- /.row -->
